@@ -1,0 +1,13 @@
+<div class="bg-dark container" style="height:100%;">
+    <div class="row">
+        <div (click)="setSongs(genre)" class="col-3 mb-4 mt-4 border ms-5 text-center" *ngFor="let genre of genres" style="height:10rem; width:15rem;" [style.background-color]="getRandomColor()">
+            <h5 class="card-title fw-bolder text-white mt-4">{{getGenreName(genre)}}</h5>
+        </div>
+    </div>
+</div>
+<div class="bg-dark container text-white text-center" *ngIf="selectedGenre">
+    Songs that match {{getGenreName(selectedGenre!)}}
+    <ul>
+        <li *ngFor="let song of songs"><a href="{{song}}">{{getGenreName(song)}}</a></li>
+    </ul>
+</div>
